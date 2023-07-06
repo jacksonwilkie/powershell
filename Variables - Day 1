@@ -1,30 +1,40 @@
     Create a variable called "var1" that holds a random number between 25-50.
+$var1 = get-random -maximum 50 -minimum 25
+
 
     Create a variable called "var2" that holds a random number between 1-10.
+$var2 = get-random -maximum 10 -minimum 1
+
 
     Create a variable called "sum" that holds the sum of var1 and var2.
+$sum = $var1 + $var2
+
 
     Create a variable called "sub" that holds the difference of var1 and var2.
+$sub = $var1 - $var2
+
+
 
     Create a variable called "prod" that holds the product of var1 and var2.
+$prod = $var1 * $var2
 
     Create a variable called "quo" that holds the quotient of var1 and var2.
-
+$quo = $var1 / $var2
     Replace the variables in text with their values in the following format:
 
         "var1" + "var2" = "sum"
-
+30 + 5 = 35
     Replace the variables in text with their values in the following format:
 
         "var1" - "var2" = "sub"
-
+30 - 5 = 25
     Replace the variables in text with their values in the following format:
 
         "var1" * "var2" = "prod"
-
+30 * 5 = 150
     Replace the variables in text with their values in the following format:
 
         "var1" / "var2" = "quo"
-
+30 / 5 = 6
 This page was built using a slightly modified version of the Antora default UI.
 The source code for this UI is licensed under the terms of the MPL-2.0 license and can be found at https://git.cybbh.space/common/contributing

@@ -1,0 +1,21 @@
+
+
+    Create an array containing a range with a random starting and stopping point. The starting point will be a random number from -10 through 0. The ending point will be a random number from 1 through 20.
+
+	For example, if the first random number is -3, and the second random number is 2, your array will be -3, -2, -1, 0, 1, 2
+
+    
+
+$start = get-random -maximum 0 -minimum -10
+$stop = get-random -maximum 20 -minimum 1
+$arry = ($start..$stop)
+
+
+
+
+	
+Create a variable that contains the contents of the array in reverse
+
+	Using the above example, your reversed array will be 2, 1, 0, -1, -2, -3 
+
+

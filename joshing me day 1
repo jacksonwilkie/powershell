@@ -1,0 +1,43 @@
+tasklist
+Get-Process
+Get-Eventlog -LogName 
+Get-Alias
+
+Update-Help -Force -ErrorAction SilentlyContinue
+
+get-childitem -path C:\windows -filter *.exe -recurse -name
+
+$alias:dir
+
+
+Set-Alias hack Get-ChildItem
+remove-item alias:hack
+
+Get-Process | Get-Member
+(Get-Process)
+
+Get-Process | Format-List -property name, id
+
+(
+Get-Process notepad).kill()
+
+$x -is array
+$x -is [string]
+
+
+if you put multiple items inside o
+
+
+f a variable, it is automatically an array
+
+$jaggedarray = "joe", "jim", "jan" (1, ('apple', 'pear'), 3), "jay"
+
+foreach ($item in $targetingarray)
+{
+  if ($item[2] -eq 'Beijing'){
+      Write-output $item
+
+}
+      }
+
+$mylist = @{first = "John"; Last = "Doe"; Mid = "Bon"; Age = 35}

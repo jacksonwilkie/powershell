@@ -1,0 +1,24 @@
+
+
+    Display a list of running processes.
+
+    Display a list of all running processes that start with the letter "s".
+
+    Find the cmdlet and its purpose for the following aliases:
+
+        gal
+
+        dir
+
+        echo
+
+        ?
+
+        %
+
+        ft
+
+    Display a list of Windows Firewall Rules.
+
+    Create a new alias called "gh" for the cmdlet "Get-Help"
+

@@ -1,0 +1,44 @@
+
+
+    Ensure that you have the latest copy of help by updating your help system.
+Update-Help
+
+
+
+
+    Which cmdlets deal with the viewing/manipulating of processes?
+Get-Process
+
+
+
+
+
+    Display a list of services installed on your local computer.
+Get-Service
+
+
+
+
+    What cmdlets are used to write or output objects or text to the screen?
+Write-Output
+
+
+
+
+    What cmdlets can be used to create, modify, list, and delete variables?
+Get-Variable	Gets the variables in the current console.
+New-Variable	Creates a new variable.
+Remove-Variable	Deletes a variable and its value.
+Set-Variable	Changes the value of a variable.
+
+
+    What cmdlet can be used, other than Get-Help, to find and list other cmdlets?
+Get-Command
+
+
+
+    Find the cmdlet that is used to prompt the user for input.
+Read-Host
+
+
+

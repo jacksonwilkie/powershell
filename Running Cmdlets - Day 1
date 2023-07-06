@@ -1,24 +1,33 @@
 
 
     Display a list of running processes.
+Get-Process
+
+
 
     Display a list of all running processes that start with the letter "s".
+Get-Process -name s*
+
 
     Find the cmdlet and its purpose for the following aliases:
 
         gal
-
+Get-Alias
         dir
-
+Get-ChildItem
         echo
-
+Write-Output
         ?
-
+where-Object
         %
-
+ForEach-Object
         ft
+Format Table
+
 
     Display a list of Windows Firewall Rules.
+Get-NetFirewallRule
+
 
     Create a new alias called "gh" for the cmdlet "Get-Help"
-
+Set-Alias gh Get-Help

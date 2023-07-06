@@ -1,0 +1,30 @@
+    Create a variable called "var1" that holds a random number between 25-50.
+
+    Create a variable called "var2" that holds a random number between 1-10.
+
+    Create a variable called "sum" that holds the sum of var1 and var2.
+
+    Create a variable called "sub" that holds the difference of var1 and var2.
+
+    Create a variable called "prod" that holds the product of var1 and var2.
+
+    Create a variable called "quo" that holds the quotient of var1 and var2.
+
+    Replace the variables in text with their values in the following format:
+
+        "var1" + "var2" = "sum"
+
+    Replace the variables in text with their values in the following format:
+
+        "var1" - "var2" = "sub"
+
+    Replace the variables in text with their values in the following format:
+
+        "var1" * "var2" = "prod"
+
+    Replace the variables in text with their values in the following format:
+
+        "var1" / "var2" = "quo"
+
+This page was built using a slightly modified version of the Antora default UI.
+The source code for this UI is licensed under the terms of the MPL-2.0 license and can be found at https://git.cybbh.space/common/contributing

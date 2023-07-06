@@ -1,0 +1,64 @@
+
+
+Create two empty hash tables with the following names:
+
+    employee1
+
+    employee2
+
+Using the following table of key-value pairs, apply each key-value to the empty hash tables.
+Table 1. keys and values First 	Last 	ID 	Job
+
+Mary
+	
+
+Hopper
+	
+
+001
+	
+
+Software Developer
+
+John
+	
+
+Williams
+	
+
+002
+	
+
+Web Developer
+	
+
+The keys on the first row of the table while the values are on the first column of the table
+
+Now add a new key called Username which holds a contraction of the employee’s first initial then last name then ID. (i.e. mhopper001).
+
+Mary got promoted to "Software Lead" so the job key for Mary needs to be changed to "Software Lead"
+
+Create a new hash table called "employee3" that contains the following values with the respective keys.
+Table 2. employee3 First 	Last 	ID 	Job
+
+Alex
+	
+
+Moran
+	
+
+003
+	
+
+Software Developer
+
+Add a new key called "Status" that holds the values:
+Table 3. Status Mary 	John 	Alex
+
+Management
+	
+
+Intermediate
+	
+
+Entry Level

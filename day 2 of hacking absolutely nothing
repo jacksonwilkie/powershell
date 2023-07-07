@@ -36,3 +36,4 @@ get-process | Where-object {$_.company -get 'microsoft'} | ft name, description,
 1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9 | Sort-Object | Get-unique
 get-childitem | measure-object -property length #gives the count with a header.
 (get-childitem).count # Gives the count without a header.
+get-childitem | measure-object -property length -average -maximum -minimum -sum #looks at file length inside of a directory.

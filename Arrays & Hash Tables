@@ -3,8 +3,9 @@
 Create two empty hash tables with the following names:
 
     employee1
-
+$employee1 = @{}
     employee2
+$employee2 = @{}
 
 Using the following table of key-value pairs, apply each key-value to the empty hash tables.
 Table 1. keys and values First 	Last 	ID 	Job
@@ -20,6 +21,9 @@ Hopper
 
 Software Developer
 
+$employee1=[ordered] @{First = "Mary"; Last = "Hopper"; ID = "001"; Job = "Software Developer"}
+
+
 John
 	
 
@@ -30,13 +34,16 @@ Williams
 	
 
 Web Developer
-	
+
+$employee2=[ordered] @{First = "John"; Last = "Williams"; ID = "002"; Job = "Web Developer"}
+
 
 The keys on the first row of the table while the values are on the first column of the table
 
 Now add a new key called Username which holds a contraction of the employee’s first initial then last name then ID. (i.e. mhopper001).
 
 Mary got promoted to "Software Lead" so the job key for Mary needs to be changed to "Software Lead"
+ $employee1["Job"] = "Software Lead"
 
 Create a new hash table called "employee3" that contains the following values with the respective keys.
 Table 2. employee3 First 	Last 	ID 	Job
@@ -52,9 +59,12 @@ Moran
 
 Software Developer
 
+
 Add a new key called "Status" that holds the values:
 Table 3. Status Mary 	John 	Alex
 
+
+ $employee1["Status"]= "Management"
 Management
 	
 

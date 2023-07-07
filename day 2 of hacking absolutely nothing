@@ -1,0 +1,16 @@
+ #ScriptBlock
+# $myblock = { get-service | Format-Table name, status }
+# & $myblock
+
+#$a = 1 
+# $b = 2
+#$b = { 1 + 1 }
+
+#Sorting and Grouping 
+#gci | Sort
+#Get-ChildItem | Sort-Object
+Get-ChildItem | Sort-Object -Property length -Descending # Sorts childitems by size, descending going down.
+gci | Get-Member # Gets all Properties
+gci | Sort-Object Extension | ft -GroupBy extension #groups by file extensions
+Get-Service | Group-Object -property status #Groups by the status
+Get-ChildItem | Grouyp-Object {$_.length -lt 1KB} #PIPELINE VARIABLE, $_, is just plugging in what comes through and using it in a variable.

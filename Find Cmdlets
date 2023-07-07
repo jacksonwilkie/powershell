@@ -1,7 +1,5 @@
-
-
     Ensure that you have the latest copy of help by updating your help system.
-Update-Help
+Update-Help -Force -ErrorAction SilentlyContinue
 
 
 

@@ -33,7 +33,172 @@ get-process | Where-object {$_.company -like 'micro*'} | ft name, description, c
 get-process | Where-object {$_.company -get 'microsoft'} | ft name, description, company
 
 #Additional Commands
+
 1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9 | Sort-Object | Get-unique
-get-childitem | measure-object -property length #gives the count with a header.
-(get-childitem).count # Gives the count without a header.
-get-childitem | measure-object -property length -average -maximum -minimum -sum #looks at file length inside of a directory.
+get-childitem | measure-object -property length
+
+
+#compare-object
+'powershell is so much fun' > test.txt
+$before = gci
+'42' > text.txt
+$after = gci
+Compare-Object $before $after -property length, name
+
+#create objects
+$mytruck = New-Object object
+$mytruck | Get-Member
+
+#Adding properties using add-member
+
+add-member -MemberType NoteProperty -name color -Value RED -InputObject $mytruck
+#Short handed
+add-member -me NoteProperty-in $mytruck -na Make -va Ford
+
+$mytruck | Add-Member  Add-helper
+
+#short handed positional paramerters ScriptedMethod ("
+
+add-member -InputObject $mytruck Noteproperty Model "F-150"
+#Adding properties through a pipeline 
+$mytruck | Add-member NoteProperty cab supercree
+
+#psprovider
+Get-PSProvider
+
+
+#conditions 
+
+equals  -ieq case insensitive
+equals -ceq case sensitive
+equals -eq equals
+ 
+ #match 
+ -like #use with wildcard
+ -match #use with regex
+
+ #replacement
+ -replace #can use regex
+
+#containment
+-contains
+-notcontains
+-in 
+-notin
+
+#type
+-is / -isnot
+
+IF/ELSE/ELSEIF
+
+$x = 11
+if ($x -gt 10) {"$x is larger than 10"}
+if $x -eq 5 {
+    Write-Host "Condition is true $x is eqyal to 5" -ForegroundColor DarkCyan}
+else {
+    write host "Condition is not true. Lies."} -ForegroundColor DarkCyan
+
+    }
+
+
+
+
+    $num = (get-random -Minimum 0 -Maximum 10)
+    if($num -lt 5) {
+        "$num is less than 5"
+    }
+    elseif($num -eq 5){
+        "$num is 5"
+    }
+
+    #Switch
+
+    $val = "meg"
+    Switch($val){
+        peter { "That's the father"}
+        lois { "That's the mother"}
+        chris {"the son"}
+        brian {"dog"}
+        stewie {"baby"}
+        default {"Shut the hell up $val"}
+}
+
+
+
+#LOOPS
+
+#Foreach-object
+
+$nums = 1,2,3,4,5
+$nums | ForEach-Object{$_ * 2}
+
+$list = 'a', 'b', 'c'
+$list | ForEach-Object{$_.toUpper()}
+
+get-childitem | ForEach-Object { $_.Length / 1kb }
+
+#Foreach, no pipeline
+
+foreach ($bull in gci C:\Users\student\Desktop -Recurse){$bull.name}
+
+#results s ot iterates through
+
+Get-Childitem C:\ -recurse | Foreach-object{$_.name}
+
+foreach($num in 1..5){$num * 2 - 1}
+
+$teams = "tigers", "pistons", "red wings", "lions"
+foreach($team in $teams){"Detroit $team"}
+
+#while
+$num = 0
+while ($num -lt 3) {
+    $num
+    $num++
+}
+
+$var = ""
+while($var -ne "Marines") {
+    $var = Read-Host "Which branch of the military is the best?"
+}
+
+#dowhile will run at least once
+
+$num = 0
+do {
+    $num
+    $num++
+}while($num -lt 3)
+
+
+#do untul!!!
+$num = 0
+do {
+    $num
+    $num++
+}until($num -gt 3)
+
+
+#FOR LOOPS
+#for(initialization; condition; increment)
+for ($num = 1; $num -le 3; $num++){$num}
+
+for($i = 0; $i -le 255; $i++) {
+    write-host 192.168.0.$i
+
+}
+
+
+#reading and writing to a file
+"Hello" > hello.txt
+Set-Content -Path .\example.txt -value "A String"
+Get-Content .\example.txt 
+cat .\example.txt
+
+##to add content to a file
+add-content -path .\example.txt -value "Another one"
+
+#powershell scripts 
+'"Odoyle Rules!"' > 1-script.ps1
+
+.\1-script.ps1 #runs the script

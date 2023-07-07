@@ -202,3 +202,11 @@ add-content -path .\example.txt -value "Another one"
 '"Odoyle Rules!"' > 1-script.ps1
 
 .\1-script.ps1 #runs the script
+
+#Here-Strings
+@'
+"odoyle rules!"
+"More Code"
+get-service
+gci
+'@ > 2-script.ps1

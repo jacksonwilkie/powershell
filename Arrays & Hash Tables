@@ -42,6 +42,8 @@ The keys on the first row of the table while the values are on the first column 
 
 Now add a new key called Username which holds a contraction of the employee’s first initial then last name then ID. (i.e. mhopper001).
 
+$username = $employee1.first.substring(0,1)+$employee1.last + $employee1.id
+
 Mary got promoted to "Software Lead" so the job key for Mary needs to be changed to "Software Lead"
  $employee1["Job"] = "Software Lead"
 

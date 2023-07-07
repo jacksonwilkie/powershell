@@ -1,4 +1,4 @@
- #ScriptBlock
+#ScriptBlock
 # $myblock = { get-service | Format-Table name, status }
 # & $myblock
 
@@ -14,3 +14,24 @@ gci | Get-Member # Gets all Properties
 gci | Sort-Object Extension | ft -GroupBy extension #groups by file extensions
 Get-Service | Group-Object -property status #Groups by the status
 Get-ChildItem | Grouyp-Object {$_.length -lt 1KB} #PIPELINE VARIABLE, $_, is just plugging in what comes through and using it in a variable.
+
+1,4,3,2,,5 | Sort-Object
+'1', '5', '3', '2', '4' | Sort-Object -property {[int]$_} # Typecasting
+1..10 | Sort-Object -property {get-random}
+
+Get-Process | Select-Object -First 10
+
+#Property Values with headers
+Get-Process | Select-Object -property name, id
+Get-Process | Select-Object -expandproperty name, id
+
+#filtering results
+
+get-service | where-object{$_.status -eq 'running'} # GETS ALL OUT RUNNING SERVICES.
+get-childitem *.ps1 | where-object {$_.length -gt 50} #sorts length of less than 50 bytes
+get-process | Where-object {$_.company -like 'micro*'} | ft name, description, company # Shows all processes where company starts with 'micro'. Wildcard = use -like
+get-process | Where-object {$_.company -get 'microsoft'} | ft name, description, company
+
+#Additional Commands
+1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9 | Sort-Object | Get-unique
+get-childitem | measure-object -property length

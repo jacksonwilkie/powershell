@@ -1,0 +1,86 @@
+##Question1
+
+$v1 = (Get-WmiObject win32_computersystem).name
+$v2 = (Get-WmiObject win32_bios).operatingsystem
+$v3 = (Get-WmiObject win32_operatingsystem).version
+$v4 = (Get-WmiObject win32_computersystem).manufacturer
+$v5 = (Get-WmiObject win32_logicaldisk).DeviceID
+
+Write-output "ComputerName        : $v1"
+Write-output "OperatingSystem     : $v2"
+Write-output "Manufacturer        : $v3" 
+Write-output "Version             : $v4"
+Write-output "Disks               : $v5"
+
+
+
+##Question 2
+$line1 = "Do you have model number: MT5437 for john.doe@sharklasers.com?"
+$line2 = "What model number for john.doe@sharklasers.com?"
+
+if($line1.contains("MT5437") -or $line2.contains("MT5437")) {
+    Write-Output "Why yes, we do have model number MT5437 for john.doe@sharklasers.com."
+}
+else {
+    Write-Output "Nah"
+    }
+
+##Question 3
+
+
+$var4 = @("i=0;notepad.exe","msedge.exe","mspaint.exe")
+for ($ $i -lt $var4.length; $i++)   {
+    start $var4[$i]
+    Write-Output "Opening $var4."
+    $ok = ($var4[$i]).id
+    Write-output "$var4 : $ok buddy"
+    (get-process $var4[$i]).processname > procs.txt
+    Start-sleep -Seconds 15
+    stop-Process -Force -name mspaint
+    start-sleep -seconds 1
+    stop-Process -Force -name notepad
+    start-sleep -seconds 1
+    stop-Process -Force -name msedge
+    Write-Output "Closing $var4"
+                                        }
+
+                                   
+                                         
+##DID NOT FINISHH #3
+
+#Question 4
+
+$Year = get-date -format yyyy
+$JulianYear = $Year.Substring(1)
+$DayOfYear = (Get-Date).DayofYear
+$JulianDate = $JulianYear + "{0:D3}" -f $DayOfYear
+Write-host $year-$dayofyear
+
+$n = read-host 
+$q= $n*$n
+write-output $q
+
+
+$rere = Read-Host
+$rere2 = Read-Host
+$rere3 = Read-Host
+$Re = $rere * $rere2 * $rere3
+write-output $Re
+
+function Get-prod([int]$rere)
+{
+    $result = $rere * $rere2 * $rere3
+    return $result
+
+
+$rere = Read-Host
+$rere2 = Read-Host
+$rere3 = Read-Host
+$result = Get-prod $rere
+Write-Output "$rere * $rere2 * $rere3 = $result"
+}
+
+(http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])
+
+
+

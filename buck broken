@@ -27,27 +27,26 @@ else {
 
 ##Question 3
 
+$procs = "notepad", "edge", "mspaint"
+$procs | ForEach-Object { Start-Process $_ }
+Get-Process -name notepad, edge, mspaint
 
-$var4 = @("i=0;notepad.exe","msedge.exe","mspaint.exe")
-for ($ $i -lt $var4.length; $i++)   {
-    start $var4[$i]
-    Write-Output "Opening $var4."
-    $ok = ($var4[$i]).id
-    Write-output "$var4 : $ok buddy"
-    (get-process $var4[$i]).processname > procs.txt
-    Start-sleep -Seconds 15
-    stop-Process -Force -name mspaint
-    start-sleep -seconds 1
-    stop-Process -Force -name notepad
-    start-sleep -seconds 1
-    stop-Process -Force -name msedge
-    Write-Output "Closing $var4"
-                                        }
+$procs | ForEach-Object { Stop-Process $_ }
+
+$File = "$pwd\procs.txt"
+foreach($proc in $procs){
+    get-process | Where-onbject{$_.name -like $proc} |
+    foreach-object{add-content $file $_.id} }
+
+foreach($proc in $procs){
+    get-process | where-object{$_.name -like $proc} |
+    format-table -property id, name, starttime, totalprocessortime,
+    virtualmemorysize,workingset64 }
+
+get-content .\procs.txt | ForEach-Object{Stop-process $_}
 
                                    
-                                         
-##DID NOT FINISHH #3
-
+                                        
 #Question 4
 
 $Year = get-date -format yyyy
@@ -79,6 +78,8 @@ $rere3 = Read-Host
 $result = Get-prod $rere
 Write-Output "$rere * $rere2 * $rere3 = $result"
 }
+
+
 
 (http|ftp|https):\/\/([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])
 

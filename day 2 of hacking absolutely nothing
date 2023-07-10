@@ -210,3 +210,80 @@ add-content -path .\example.txt -value "Another one"
 get-service
 gci
 '@ > 2-script.ps1
+
+#putting the stuff in quotes
+
+$text = `Here is "Quotes"`
+$text
+$text = "Here is `"Quotes`""
+$text
+
+Get-Service | Select-Object -First 10 | ForEach-Object{"The service {0} is called '{1}': {2}" -f $_.Name, $_.DisplayName $_.Status}
+
+
+"Go Flip burgers John do something with your life other than sitting here fat gamer" -replace "John do something with your life other than sitting here fat gamer", "World" -replace "Go Flip burgers", "Hello"
+
+$burger = 'Server1,Server2,Server3' -replace ',', ';'
+$burger
+
+#REMOVING WHITESPACE WITH REGEX
+'[                 JON          BON                  DOE  ]' -replace '\s+', ' '
+
+qprocess.exe
+
+(qprocess) -replace '\s{2,]', ', ' | select -First 10
+
+$list = 'comp1', 'comp10', 'comp13'
+$pattern = 'comp(\d{1,3})'
+
+$list -replace $pattern, 'Computer$0 (This changed from $0)'
+
+
+
+$profile -split '\.'
+
+$profile -split '(?-\.)'
+
+
+'1112223337790' -split '(?<=\G.{2})'
+C:\Users\Admin\Documents\WindowsPowerShell\Microsoft
+.powershellise_profile
+
+
+##functions
+
+function dog {
+    Get-Process
+    }
+
+
+
+$value = 1
+
+
+if($value) {
+        Write-Host -ForegroundColor Green "True"
+    }
+    else {
+        Write-Host -ForegroundColor Red "False"
+    }
+   
+function test-func {
+    param($param='default value 1', $param2 = 'default param 2')
+        "you entered $param1 and $param2"
+}
+
+test-func "you" "world"
+
+function Do-Switch {
+    param(
+        [switch]
+        $swat
+    )
+
+    if ($swat) {
+        'switch is done'
+    }
+    else {
+
+

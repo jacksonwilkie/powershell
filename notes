@@ -1,0 +1,14 @@
+notes
+
+Return line of text from the file given by the $file argument that begins with the text specified by `$start.
+If no line in the file begins with the $start text, return $null."
+
+
+return string with monthDayYear@hour:min:second
+$fmt = '%m%d%y@%T'
+return get-date -uformat $fmt
+
+function q3($arr)
+Combine the provided $arr argument into a string seperated by a '/' between each element and return this string
+
+return $arr -join('/')
